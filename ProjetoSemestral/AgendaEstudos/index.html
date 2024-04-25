@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <script src='../AgendaEstudos/js/index.global.js'></script>
+  </head>
+  <body>
+    <div class="content">
+      <section class="info">
+        <header>
+        	<div class="image"><img src="assets/load.svg" class="loading" /></div>
+        	<h1 class="temp">0°C</h1>
+            <p id="hora"></p>
+        	
+        </header>
+        <main>
+        	<div class="agends">
+        		<span style="text-align: center;">Agendamentos para:   
+                    <strong><p 
+                        id="data"></p></strong>
+                </span> 
+        		<div>
+        			<a>
+        				<span>06:00</span>
+        				<p>Jogos Grátis</p>
+        			</a>
+							<a>
+								<span>06:00</span>
+								<p>Médico</p>
+							</a>
+							<a>
+								<span>06:00</span>
+								<p>Trabalho</p>
+							</a>
+							<a>
+								<span>06:00</span>
+								<p>Terminar Agenda</p>
+							</a>
+					
+						</div>
+            	<button class="add-tarefa">Adicionar Agendamento</button>
+          	</div>
+
+        </main>
+      </section>
+      <section class="calendar">
+        <div id="calendar"></div>
+      
+      <section class="calendar">
+        <header>
+          <span id="prev-month">
+            <svg width="19" height="30" viewBox="0 0 19 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.3333 5L4.33334 15L14.3333 25" stroke="white" stroke-width="6" stroke-linecap="square"/>
+            </svg>
+          </span>
+          <p><span id="month">JUL</span> <span id="year">2020</span></p>
+          <span id="next-month">
+            <svg width="19" height="30" viewBox="0 0 19 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.66669 25L14.6667 15L4.66669 5" stroke="white" stroke-width="6" stroke-linecap="square"/>
+            </svg>              
+          </span>
+        </header>
+        <main>
+          <table id="tableDays">
+            <tr>
+              <th>DOM</th>
+              <th>SEG</th>
+              <th>TER</th>
+              <th>QUA</th>
+              <th>QUI</th>
+              <th>SEX</th>
+              <th>SAB</th>
+            </tr>
+            <tr>
+              <td class="outherMount">25</td>
+              <td class="outherMount">26</td>
+              <td class="outherMount">27</td>
+              <td class="outherMount">28</td>
+              <td class="outherMount">29</td>
+              <td class="outherMount">30</td>
+              <td>01</td>
+            </tr>
+            <tr>
+              <td class="teste">02</td>
+              <td class="teste">03</td>
+              <td>04</td>
+              <td>05</td>
+              <td>06</td>
+              <td>07</td>
+              <td>08</td>
+            </tr>
+            <tr>
+              <td>09</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>31</td>
+              <td class="outherMount">01</td>
+              <td class="outherMount">02</td>
+              <td class="outherMount">03</td>
+              <td class="outherMount">04</td>
+              <td class="outherMount">05</td>
+            </tr>
+          </table>
+        </main>
+      </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script  src="js/script.js"></script>
+    <script>     
+        // função para atualizar a data e hora
+        function atualizarDataHora() {
+        // obter a data e hora atual
+        const dataHoraAtual = new Date();
+
+        // formatar a data e hora separadamente
+        const data = dataHoraAtual.toLocaleDateString();
+        const hora = dataHoraAtual.toLocaleTimeString();
+
+        // atualizar o conteúdo dos elementos HTML
+        document.getElementById('data').textContent = data;
+        document.getElementById('hora').textContent = hora;
+        }
+
+        // chamar a função para exibir a data e hora atualizadas
+        atualizarDataHora();
+
+        // atualizar a cada segundo
+        setInterval(atualizarDataHora, 1000);  
+        
+        
+    </script>
+  </body>
+</html>
